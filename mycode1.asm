@@ -1,0 +1,22 @@
+.MODEL SMALL
+
+.STACK 100H
+
+.DATA
+HELLOMSG DB 'HELLO WORLD$'
+
+.CODE
+
+MAIN PROC
+    
+    MOV AX, @DATA
+    MOV DS, AX
+    
+    MOV AH, 9
+    LEA DX, HELLOMSG
+    INT 21H
+    
+    MOV AX, 4CH
+    INT 21H   
+MAIN ENDP      
+END MAIN
